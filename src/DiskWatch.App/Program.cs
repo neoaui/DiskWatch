@@ -25,8 +25,7 @@ public static class Program
                 File.Exists(Path.Combine(dir.FullName, "Directory.Build.props")))
                 return dir.FullName;
         }
-        var exe = Path.GetDirectoryName(Environment.ProcessPath ?? AppContext.BaseDirectory);
-        return Path.GetFullPath(string.IsNullOrEmpty(exe) ? AppContext.BaseDirectory : exe);
+        return Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "DiskWatch");
     }
     /// <summary>启动器传入：本次启动时用户拒绝了管理员确认（或请求失败），以普通权限运行。</summary>
     public static bool ElevationDeclined { get; private set; }

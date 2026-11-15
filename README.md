@@ -24,10 +24,20 @@ Windows 磁盘空间监视工具。跟踪各磁盘占用，生成日、周、月
 
 ![名词说明](docs/images/glossary.png)
 
+## 下载
+
+1. 打开 [Releases](https://github.com/neoaui/DiskWatch/releases)，下载 `DiskWatch-v0.1.0-win-x64.zip`。
+2. 解压到一个空文件夹，双击 `DiskWatch.exe`。
+3. 启动时会请求管理员权限：点「是」可使用 NTFS 快速扫描；点「否」仍可使用，并自动改用普通扫描。
+
+发布包已包含运行环境，不必另装 .NET。若 Windows 提示「已保护你的电脑」，可点「更多信息」，再点「仍要运行」。
+
+数据保存在 `%LOCALAPPDATA%\DiskWatch`。卸载时删除解压出的文件夹，以及上述数据目录。
+
 ## 运行环境
 
-- Windows 10 或 Windows 11
-- [.NET 10](https://dotnet.microsoft.com/download) 桌面运行时（自己编译时需要 SDK）
+- 使用发布包：Windows 10 或 Windows 11（64 位）
+- 从源码编译：另需 [.NET 10 SDK](https://dotnet.microsoft.com/download/dotnet/10.0)
 
 ## 编译和运行
 
@@ -47,7 +57,13 @@ dotnet run --project src\DiskWatch.App\DiskWatch.App.csproj -c Release
 dotnet release\net10\DiskWatch.App.dll
 ```
 
-程序会在仓库（或安装目录）下使用 `data\`、`logs\`、`exports\` 和 `work\`。若要指定数据目录，设置环境变量 `DISKWATCH_ROOT`。
+打包可供下载的绿色版（需 .NET 10 SDK）：
+
+```powershell
+.\pack-release.ps1 -Destination C:\Temp\DiskWatch-release
+```
+
+从源码在仓库中运行时，数据默认写在仓库下的 `data\`、`logs\`、`exports\` 和 `work\`。使用发布包时，数据默认写在 `%LOCALAPPDATA%\DiskWatch`。也可通过环境变量 `DISKWATCH_ROOT` 指定目录。
 
 首次启动会请求管理员权限。未获得权限时仍可运行，并自动改用普通扫描。
 
@@ -76,6 +92,6 @@ DiskWatch is a Windows disk space monitor. It tracks drive usage, builds daily, 
 
 All data stays on the local computer. Nothing is uploaded.
 
-Requirements: Windows 10 or 11, and .NET 10. Build with `.\build.ps1 -Test -Publish`. Administrator rights are optional and only used for faster NTFS scanning; the app falls back to a regular scan if elevation is declined.
+A ready-to-run Windows x64 package is on the Releases page; extract it and double-click DiskWatch.exe. No separate .NET install is required. To build from source, install the .NET 10 SDK and run `.\build.ps1 -Test -Publish`. Administrator rights are optional and only used for faster NTFS scanning; the app falls back to a regular scan if elevation is declined.
 
 Copyright (C) 2026 neoaui. Licensed under the GNU General Public License v3.0. See [LICENSE](LICENSE).
