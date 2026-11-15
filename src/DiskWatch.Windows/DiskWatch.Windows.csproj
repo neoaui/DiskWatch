@@ -1,0 +1,4 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup><TargetFramework>$(DiskWatchFramework)-windows</TargetFramework></PropertyGroup>
+  <ItemGroup><ProjectReference Include="..\DiskWatch.Core\DiskWatch.Core.csproj" /></ItemGroup>
+</Project>

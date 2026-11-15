@@ -1,0 +1,29 @@
+## 构建产物
+**/bin/
+**/obj/
+*.user
+*.userosscache
+*.suo
+*.userprefs
+*.csproj.user
+.vs/
+.vscode/
+*.pfx
+*.snk
+
+## 本地数据与缓存
+work/
+data/
+logs/
+exports/
+release/
+*.db
+*.db-shm
+*.db-wal
+*.log
+/DiskWatch2.exe
+
+## 系统文件
+Thumbs.db
+Desktop.ini
+.DS_Store

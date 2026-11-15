@@ -1,0 +1,7 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup><TargetFramework>$(DiskWatchFramework)-windows</TargetFramework><OutputType>WinExe</OutputType><UseWPF>true</UseWPF><UseWindowsForms>true</UseWindowsForms><StartupObject>DiskWatch.App.Program</StartupObject><ApplicationManifest>app.manifest</ApplicationManifest><ImplicitUsings>disable</ImplicitUsings></PropertyGroup>
+  <ItemGroup><ProjectReference Include="..\DiskWatch.Windows\DiskWatch.Windows.csproj"/><ProjectReference Include="..\DiskWatch.Storage\DiskWatch.Storage.csproj"/></ItemGroup>
+  <PropertyGroup><ApplicationIcon>..\..\assets\DiskWatch.ico</ApplicationIcon></PropertyGroup>
+  <ItemGroup><EmbeddedResource Include="..\..\assets\DiskWatch.ico" LogicalName="DiskWatch.Icon"/></ItemGroup>
+  <ItemGroup><EmbeddedResource Include="..\..\docs\TERMS.md" LogicalName="DiskWatch.Terms"/></ItemGroup>
+</Project>

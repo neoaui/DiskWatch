@@ -1,0 +1,14 @@
+<Project>
+  <PropertyGroup>
+    <DiskWatchFramework Condition="'$(DiskWatchFramework)' == ''">net10.0</DiskWatchFramework>
+    <TargetFramework>$(DiskWatchFramework)</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <LangVersion>13</LangVersion>
+    <RestorePackagesPath>$(MSBuildThisFileDirectory)work\nuget</RestorePackagesPath>
+    <NuGetAudit>true</NuGetAudit>
+    <NuGetAuditMode>all</NuGetAuditMode>
+    <WarningsAsErrors>$(WarningsAsErrors);NU1903;NU1904</WarningsAsErrors>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+</Project>

@@ -1,0 +1,5 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup><TargetFramework>$(DiskWatchFramework)-windows</TargetFramework><OutputType>Exe</OutputType></PropertyGroup>
+  <ItemGroup><ProjectReference Include="..\..\src\DiskWatch.Windows\DiskWatch.Windows.csproj"/><ProjectReference Include="..\..\src\DiskWatch.Storage\DiskWatch.Storage.csproj"/><Compile Include="..\..\src\LaunchPolicy.cs" Link="LaunchPolicy.cs"/></ItemGroup>
+  <ItemGroup><Compile Include="..\..\src\SecureLaunchPolicy.cs" Link="SecureLaunchPolicy.cs"/></ItemGroup>
+</Project>
